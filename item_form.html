@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Our own CSS-->
+    <link rel="stylesheet" href="cssfinalassignment.css">
+    <style>
+      @media screen and (max-width: 700px){
+        .left-form{
+          display: none;
+        }
+        .right-form{
+          width: 100%;
+        }
+      }
+      .ProductForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 75%;
+        z-index: 1000;
+        /*border: 1px solid red;*/
+      }
+      #footer-margin{
+        bottom: 0;      
+        align-self: flex-end;
+        height: 0px;
+        margin-top: 250px;
+        z-index: 0;
+      }
+      .ProductForm > h1{
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        /*border: 1px solid red;*/
+      }
+      .form{
+        margin-bottom: 100px;
+      }
+      .form-body{
+        display: flex;
+        width: 100%;
+        /*border: 1px solid red;*/
+      }
+      .left-form{
+        width: 30%;
+        /*border: 1px solid red;*/
+      }
+      .right-form{
+        width: 60%;
+        /*border: 1px solid red;*/
+      }
+    </style>
+    <title>Mocan Clothing Homepage</title>
+  </head>
+
+  <body>
+    <!--Topmost Navigation Bar. Codes from bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <img src="finalprojectimages/company_logo_transparent.jpg" alt="Mocan clothing logo" width="200" height="100">
+            <!--Hamburger -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <!--Hamburger -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Shop
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">New In</a></li>
+                  <li><a class="dropdown-item" href="#">Dress</a></li>
+                  <li><a class="dropdown-item" href="#">Jeans</a></li>
+                  <li><a class="dropdown-item" href="#">Set</a></li>
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">On Sale</a></li>
+                  <!--Dropdown divider code 
+                    <li><hr class="dropdown-divider"></li>
+                    -->
+                </ul>
+              </li>
+              <li class="nav-item">
+                  <!--using data-bs-toggle, target and changing the id to match the modal below to link the button-->
+                <a data-bs-toggle="modal" data-bs-target="#contactUsModal" class="nav-link" href="#">Form</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- End of Header-->
+    <div class="container-fluid form mb-3">
+        <form class="ProductForm container">
+            <h1>Add a Product</h1>
+            <br>
+            <div class="form-body">
+            <div class="left-form col me-2">
+              <p class="font-italic text-center">Image preview inside the box below.</p>
+              <div class="image-area mt-4"><img id="imagePreview" src="#" alt="" class="img-fluid mx-auto"></div>
+            </div>
+            <div class="right-form col ms-2">
+            <div class="ProductName-field row mt-2 ps-2 pe-2">
+                <label for="ProductName" class="form-label">Product Name:</label>
+                <input type="Text" class="form-control" id="ProductName" placeholder="Enter the Product Name" />
+            </div>
+            <div class="ProductPrice-field row mt-2 ps-2 pe-2">
+                <label for="ProductPrice" class="form-label">Price:</label>
+                <input type="number" class="form-control" id="ProductPrice" placeholder="Enter the Price" />
+            </div>
+            <div class="ProductDesc-field row mt-2 ps-2 pe-2">
+                <label for="ProductDesc" class="form-label">Description:</label>
+                <input type="Text" class="form-control" id="ProductDesc" placeholder="Enter the Product Description" />
+            </div>
+            <div class="ProductImg-field row mt-2 ps-2 pe-2">
+                <label for="ProductImg" class="form-label">Upload an Image:</label>
+                <input type="file" class="form-control" id="ProductImg" />
+            </div>
+            <div class="btn-group">
+              <button type = "button" class="ProductCat btn btn-primary dropdown-toggle row mt-4 ps-4 pe-2 ms-2" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                Product Category
+              </button>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button" value="tops">Tops</button></li>
+                  <li><button class="dropdown-item" type="button" value="dresses">Dresses</button></li>
+                  <li><button class="dropdown-item" type="button" value="jeans">Jeans</button></li>
+                  <li><button class="dropdown-item" type="button" value="set">Set</button></li>
+                  <li><button class="dropdown-item" type="button" value="new">New</button></li>
+                  <li><button class="dropdown-item" type="button" value="sale">On sale</button></li>
+                </ul>
+              </button>
+              </div><br>
+            <button type="reset" class="btn btn-danger ms-2 mt-2">Clear</button>
+            <button type="submit" class="btn btn-light ms-2 mt-2">Save Product</button>
+            </div>
+          </div>
+        </form>
+    </div>
+    <!-- Common botton nav -->        
+    <div><div class="container-fluid" id="footer-margin">
+      <footer class="py-3">
+          <ul class="nav justify-content-center pb-3 mb-3 mt-10">
+              <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2">Shop</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2">Form</a></li>
+          </ul>
+          <p class="text-center footer-brand"> © 2021 Mocan Clothing. All rights reserved.</p>
+      </footer>
+  </div></div>
+    <!--
+    <div>
+      <div class="container-fluid" id="footer-margin">
+      <footer class="py-3">
+          <ul class="nav justify-content-center pb-2 mb-0">
+              <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2">Shop</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2">Form</a></li>
+          </ul>
+          <p class="text-center footer-brand"> © 2021 Mocan Clothing. All rights reserved.</p>
+      </footer>
+      </div>
+    </div>
+    -->
+    <!--Contact Us Form using Modal-->
+    <div id="contactUsModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Please fill in the contact us form</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Please write in your comment</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  test change -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

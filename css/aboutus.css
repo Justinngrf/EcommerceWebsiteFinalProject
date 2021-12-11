@@ -1,0 +1,169 @@
+
+#about_left {
+    width: 50%;
+    justify-content: left;
+    padding-left: 0px;
+    padding-right: 32 px;
+    text-align: justify;
+}
+
+.about_text{
+    width: 90%;    
+}
+
+#about_left > img {
+    width : 100%;
+}
+
+/*  Social Media Icon */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+  
+.connect {
+    width: 90%;
+    height : 50px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+font-family: 'Courier New', Courier, monospace;
+    align-self: center;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    
+}
+
+
+.wrapper .button {
+            display: inline-block;
+            height: 24px;
+            width: 40px;
+            
+            margin: 0 5px;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 40px;
+            cursor: pointer;
+            box-shadow: 0px 10px 10px rgba(0, 0,0,1);
+            transition: all 0.3s ease-out;
+            align-self: center;
+            
+        }
+
+.wrapper .button:hover {
+            width: 40px;
+
+}
+.wrapper .button .icon {
+            display: inline-block;
+            text-align: center;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            transition: all 0.3s ease-out;
+}
+
+        .wrapper .button:nth-child(1):hover .icon {
+            background: #25d366;
+        }
+        .wrapper .button:nth-child(2):hover .icon {
+            background: #4267b2;
+        }
+        .wrapper .button:nth-child(3):hover .icon {
+            background: #c32aa3;
+        }
+        .wrapper .button .icon a i{
+          font-size: 12px;
+            line-height: 24px;
+            color: black;
+        }
+        .wrapper .button:hover .icon a i{
+            color: #fff;
+
+        }
+
+
+
+
+
+#about_right {
+    width: 50%;
+    padding-top : 24px;
+    padding-left: 24px;
+    font-style:italic;
+    font-family: 'Cookie', cursive;
+
+}
+
+/* -- Member --*/
+
+#member h1 {
+  text-align: center;
+}
+
+#member {  
+  
+  display: flex;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 16px;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: justify;
+  place-content: center;
+  align-content: center;
+  align-self: center;
+  align-self: baseline;
+  align-items: center;
+}
+
+
+
+.member_social {
+  display: flex;
+  flex-direction: row;
+margin : auto;
+  text-align: center;
+  place-content: center;
+  align-content: center;
+  align-self: baseline;
+  align-items: center;
+
+  
+}
+.member_social .icon {
+  
+  width: 30px;
+  height:30px;
+}
+
+@media only screen and (max-width:700px) {
+
+  #about_right{
+    display:none;
+  }
+
+  #about_left > h1 {
+    text-align: center;
+  }
+  #about_left {
+    text-align: justify;
+    padding-right: 12px;
+    padding-left: 32px;
+
+  width:100%;
+ 
+}
+
+#box1, #box2, #box3, #box4 {
+  display: flex;
+  flex-wrap: wrap ;
+  padding-left:12px;
+  width: 100%;
+  height:100%;
+  text-align: justify;
+  place-content: center;
+  align-content: center;
+  align-self: center;
+  align-self: baseline;
+  align-items: center;
+  position : relative;
+}
